@@ -1,4 +1,4 @@
-FROM timhaak/sickbeard:latest
+FROM linuxserver/sickbeard:latest
 LABEL org.freenas.interactive="false" \
       org.freenas.version="2" \
       org.freenas.upgradeable="true" \
@@ -17,5 +17,22 @@ LABEL org.freenas.interactive="false" \
               \"name\": \"/data\",					\
               \"descr\": \"Sickbeard data volume\"			\
           }								\
-      ]" 
+      ]" \
+      org.freenas.settings="[             \
+          {               \
+              \"env\": \"TZ\",            \
+              \"descr\": \"Timezone - eg Europe/London\",   \
+              \"optional\": true          \
+          },                \
+          {               \
+              \"env\": \"PUID\",          \
+              \"descr\": \"User ID - eg 1000\",                         \
+              \"optional\": true          \
+          },                \
+          {               \
+              \"env\": \"PGID\",          \
+              \"descr\": \"Group ID - eg 1000\",                \
+              \"optional\": true          \
+          }               \
+      ]"
 
